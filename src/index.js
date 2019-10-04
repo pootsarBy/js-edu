@@ -7,8 +7,15 @@
 module.exports = function getTimeForEducation(
     focus = 'family', 
     knowsProgramming = true,
-    config = {family: 4}
-    ) {
-      return 0;
+    config = {family: 2}
+    )  {
+      const basicJsCourse = 500;
+      const allJsCourse = 800;
+      let lerningHours = 0;
+      if (knowsProgramming == true)
+        lerningHours = allJsCourse;
+      else lerningHours = allJsCourse + basicJsCourse;
+      lerningHours = lerningHours / config[focus]
+      return Math.ceil(lerningHours);
   };
   
